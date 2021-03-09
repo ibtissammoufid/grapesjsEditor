@@ -6,15 +6,21 @@ import { AppComponent } from './app.component';
 import { EditorComponent } from './editor/editor.component';
 import { MyeditorComponent } from './myeditor/myeditor.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { PreviewComponent } from './preview/preview.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     EditorComponent,
-    MyeditorComponent
+    MyeditorComponent,
+    PreviewComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

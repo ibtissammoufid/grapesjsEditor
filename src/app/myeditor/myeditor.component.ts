@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import grapesjs from 'grapesjs';
 import 'grapesjs-preset-webpage';
-import { AnyARecord } from 'node:dns';
 import { ExportService } from '../services/export.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-myeditor',
@@ -11,9 +11,12 @@ import { ExportService } from '../services/export.service';
 })
 export class MyeditorComponent implements OnInit {
 
-  constructor(private offreService: ExportService) { }
+  
+
+  constructor(private exportService: ExportService,  private router: Router) { }
   editor = null;
   mytext: any;
+
 
   ngOnInit(): void {
     this.editor = grapesjs.init({
@@ -109,5 +112,11 @@ export class MyeditorComponent implements OnInit {
   export(){
     this.mytext=JSON.stringify(this.editor.getComponents());
     //this.mytext='test';
+    this.exportService.mytext=this.mytext;
   }
+  preview(){
+    this.router.navigate(['/preview']);
+  }
+
+ 
 }
