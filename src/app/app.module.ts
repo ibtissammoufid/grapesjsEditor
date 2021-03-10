@@ -8,6 +8,8 @@ import { MyeditorComponent } from './myeditor/myeditor.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { PreviewComponent } from './preview/preview.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { PreviewComponent } from './preview/preview.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

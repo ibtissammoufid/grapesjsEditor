@@ -16,6 +16,7 @@ export class MyeditorComponent implements OnInit {
   constructor(private exportService: ExportService,  private router: Router) { }
   editor = null;
   mytext: any;
+  myjson: any;
 
 
   ngOnInit(): void {
@@ -111,8 +112,10 @@ export class MyeditorComponent implements OnInit {
 
   export(){
     this.mytext=JSON.stringify(this.editor.getComponents());
+    this.myjson=this.editor.getComponents();
     //this.mytext='test';
     this.exportService.mytext=this.mytext;
+    this.exportService.myjson=this.myjson;
   }
   preview(){
     this.router.navigate(['/preview']);

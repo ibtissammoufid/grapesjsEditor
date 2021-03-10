@@ -10,6 +10,7 @@ export class ExportService {
 
   private baseURL = "http://localhost:8082/api/";
   mytext: any;
+  myjson: any;
 
   constructor(private httpClient: HttpClient) { }
 
