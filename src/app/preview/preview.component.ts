@@ -23,9 +23,10 @@ export class PreviewComponent implements OnInit {
   model = {};
   fields: FormlyFieldConfig[] = [
     {
-      type: 'title',
+      type: 'button',
       templateOptions: {
-        label: 'TITLE TEST',
+        label: 'Go to editor',
+        goTo : '/myeditor',
       }
     },
     {

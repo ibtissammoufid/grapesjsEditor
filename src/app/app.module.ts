@@ -9,7 +9,7 @@ import { PreviewComponent } from './preview/preview.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { TextComponent } from './components-templates/text';
-import { TitleComponent } from './components-templates/title';
+import { ButtonComponent } from './components-templates/button';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { TitleComponent } from './components-templates/title';
     ReactiveFormsModule,
     FormlyModule.forRoot({ extras: { lazyRender: true },
       types: [
-        { name: 'title', component: TitleComponent },
+        { name: 'button', component: ButtonComponent },
         { name: 'text', component: TextComponent },
       ]  
     })
