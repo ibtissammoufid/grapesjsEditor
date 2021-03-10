@@ -1,9 +1,11 @@
 <div class="panel__top">
-    <div class="panel__basic-actions"></div>
-    <div>
-      <p>{{mytext}}</p>
-      <button (click)='export()'>get JSON</button>
-     </div>
+    <div class="panel__basic-actions">
+      <div>
+        <p>{{mytext}}</p>
+        <button (click)='export()'>get JSON</button>
+        <button (click)='save()'>Save page 1</button>
+      </div>
+    </div>
 </div>
 <div class="editor-row">
   <div class="editor-canvas">
