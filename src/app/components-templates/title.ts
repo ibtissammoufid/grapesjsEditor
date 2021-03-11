@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
 
 @Component({
- selector: 'button',
+ selector: 'Btitle',
  template: `
- <a href="{{ to.goTo }}">{{ to.label }}</a>
+ <h1>{{ to.label }}</h1>
  `,
 })
-export class ButtonComponent extends FieldType {}
+export class TitleComponent extends FieldType {}

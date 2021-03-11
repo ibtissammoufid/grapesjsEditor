@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import {FormGroup} from '@angular/forms';
 import {FormlyFieldConfig, FieldType} from '@ngx-formly/core';
 
+
 interface pageData {
     pageName: string;
     data: string;
@@ -18,41 +19,23 @@ export class PreviewComponent implements OnInit {
   constructor(private apiService : ApiService, private route: ActivatedRoute) { }
   pageName : string;
   dataPage : pageData;
-
+  
   form = new FormGroup({});
   model = {};
-  fields: FormlyFieldConfig[] = [
-    {
-      type: 'button',
-      templateOptions: {
-        label: 'Go to editor',
-        goTo : '/myeditor',
-      }
-    },
-    {
-      type: 'text',
-      templateOptions: {
-        label: 'TEXT TEST 1',
-      }
-    },
-    {
-      type: 'text',
-      templateOptions: {
-        label: 'TEXT TEST 2',
-      }
-    }
-  ];
+  fields: FormlyFieldConfig[];
   ngOnInit(): void {
       this.route.params.subscribe(paramsId => {
         this.pageName = paramsId.page;
       });
       this.apiService.getPage(this.pageName).subscribe(
-      data => {
-        this.dataPage = data;
-      },
-      err => {
-        this.dataPage = JSON.parse(err.error).message;
-      }
-    );
+        data => {
+          this.dataPage = data;
+          console.log(JSON.parse(this.dataPage.data));
+          this.fields = JSON.parse(this.dataPage.data);
+        },
+        err => {
+          this.dataPage = JSON.parse(err.error).message;
+        }
+      );
   }
 }

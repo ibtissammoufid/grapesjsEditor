@@ -110,6 +110,7 @@ export class MyeditorComponent implements OnInit {
 
   export(){
     this.mytext=JSON.stringify(this.editor.getComponents());
+    console.log(this.editor.getComponents())
     //this.mytext='test';
   }
 

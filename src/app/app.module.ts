@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { EditorComponent } from './editor/editor.component';
 import { MyeditorComponent } from './myeditor/myeditor.component';
 import { PreviewComponent } from './preview/preview.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { TextComponent } from './components-templates/text';
 import { ButtonComponent } from './components-templates/button';
+import { TitleComponent } from './components-templates/title';
+import { SectionWrapperComponent } from './components-templates/section';
+
 
 @NgModule({
   declarations: [
@@ -24,9 +27,13 @@ import { ButtonComponent } from './components-templates/button';
     AppRoutingModule,
     ReactiveFormsModule,
     FormlyModule.forRoot({ extras: { lazyRender: true },
+      wrappers: [
+        { name: 'section', component: SectionWrapperComponent },
+      ],
       types: [
         { name: 'button', component: ButtonComponent },
         { name: 'text', component: TextComponent },
+        { name: 'h1', component: TitleComponent },
       ]  
     })
   ],
