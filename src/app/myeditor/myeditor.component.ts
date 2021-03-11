@@ -32,7 +32,7 @@ export class MyeditorComponent implements OnInit {
       // Disable the storage manager for the moment
       storageManager: false,
       // Avoid any default panel
-      panels: { defaults: [] },
+      //panels: { defaults: [] },
       
       //Blocks
       blockManager: {
@@ -61,6 +61,10 @@ export class MyeditorComponent implements OnInit {
             // This triggers `active` event on dropped components and the `image`
             // reacts by opening the AssetManager
             activate: true,
+          }, {
+            id: 'input',
+            label: 'Input',
+            content: '<label>Name</label><input placeholder="Type here your name"/>',
           }
         ]
       },
@@ -118,6 +122,11 @@ export class MyeditorComponent implements OnInit {
     this.exportService.myjson=this.myjson;
   }
   preview(){
+    this.mytext=JSON.stringify(this.editor.getComponents());
+    this.myjson=this.editor.getComponents();
+    //this.mytext='test';
+    this.exportService.mytext=this.mytext;
+    this.exportService.myjson=this.myjson;
     this.router.navigate(['/preview']);
   }
 

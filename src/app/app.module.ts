@@ -9,6 +9,8 @@ import { MyeditorComponent } from './myeditor/myeditor.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PreviewComponent } from './preview/preview.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoopComponentComponent } from './loop-component/loop-component.component';
+import { CommentComponent } from './comment/comment.component';
 
 
 
@@ -17,7 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     EditorComponent,
     MyeditorComponent,
-    PreviewComponent
+    PreviewComponent,
+    LoopComponentComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,

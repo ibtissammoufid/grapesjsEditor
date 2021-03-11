@@ -10,6 +10,7 @@ export class PreviewComponent implements OnInit {
   mytext: any;
   myjson: any;
   test: any;
+  data: Array<any>;
 
   obj: any;
   constructor(private exportService: ExportService) { }
@@ -17,7 +18,8 @@ export class PreviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.getText();
-    //this.obj = JSON.parse('{"type":"text","components":[{"type":"textnode","content":"Insert your text here"}]}');
+    this.test=   [{"type":"text","components":[{"type":"textnode","content":"Insert your text here"}]}];
+    this.obj = JSON.parse(this.mytext);
     //this.mytext= 'test';
     //this.mytext= get text()
     //this.test= this.myjson.type;
@@ -26,7 +28,7 @@ export class PreviewComponent implements OnInit {
   private getText(){
     this.mytext=this.exportService.mytext;
     this.myjson=this.exportService.myjson;
-    this.test= this.myjson[0].type;
+    //this.test= this.myjson[0].type;
   }
  
 
