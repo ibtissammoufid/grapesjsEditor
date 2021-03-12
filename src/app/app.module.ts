@@ -11,6 +11,7 @@ import { PreviewComponent } from './preview/preview.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoopComponentComponent } from './loop-component/loop-component.component';
 import { CommentComponent } from './comment/comment.component';
+import { ComponentLoopComponent } from './component-loop/component-loop.component';
 
 
 
@@ -21,7 +22,8 @@ import { CommentComponent } from './comment/comment.component';
     MyeditorComponent,
     PreviewComponent,
     LoopComponentComponent,
-    CommentComponent
+    CommentComponent,
+    ComponentLoopComponent
   ],
   imports: [
     BrowserModule,
